@@ -1,0 +1,5 @@
+math-input PASS expected NONE actual NONE
+math-output PASS expected NONE actual NONE
+negotiation PASS expected GUARDRAIL_INTERVENED actual GUARDRAIL_INTERVENED
+competitor PASS expected GUARDRAIL_INTERVENED actual GUARDRAIL_INTERVENED
+legal-threat PASS expected GUARDRAIL_INTERVENED actual GUARDRAIL_INTERVENED
