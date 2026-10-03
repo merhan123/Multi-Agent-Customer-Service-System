@@ -1,0 +1,43 @@
+DRY RUN - Cleaning up project 'udacity-agentcore' in us-east-1 as arn:aws:sts::327887916689:assumed-role/voclabs/user5296755=2d0c6edc-44d7-11ea-a45c-f7d5bc8e1851 (account 327887916689)
+
+1. Bedrock Knowledge Bases
+  [would delete] data source warranty-policy-documents (NCK1REC6P0) of KB novamart-warranty-policy-kb
+  [would delete] knowledge base novamart-warranty-policy-kb (WZHJH6AI6W)
+  [would delete] data source returns-policy-documents (VA7VIDVOWC) of KB novamart-returns-policy-kb
+  [would delete] knowledge base novamart-returns-policy-kb (VKKS5Q6GIP)
+  [would delete] data source shipping-policy-documents (52BLE2Z5RH) of KB novamart-shipping-policy-kb
+  [would delete] knowledge base novamart-shipping-policy-kb (CBEKORPLSI)
+  [kept] role udacity-agentcore-agentcore-role (not a console-created KB role)
+
+2. AgentCore runtime (AgentCore CLI stack), memory, workload identity, gateway
+  stack AgentCore-udacity-default is UPDATE_COMPLETE
+  [would delete] AgentCore CLI stack AgentCore-udacity-default (runtime udacity_agentcore_runtime)
+  [would delete] agent runtime udacity_agentcore_runtime (udacity_agentcore_runtime-hFEH18DWmq) left outside the stack
+  [would delete] memory udacity_agentcore_memory-7Qy7S39ZfZ
+  [would delete] workload identity udacity_agentcore_runtime-hFEH18DWmq
+
+3. Bedrock Guardrail
+  [would delete] guardrail udacity-agentcore-guardrail (2nr0jppplwmi) incl. all versions
+
+4. S3 policy bucket contents
+  [would delete] all objects/versions in s3://udacity-agentcore-policy-docs-327887916689-d4f11210
+
+5. CloudFormation stack
+  stack udacity-agentcore is CREATE_COMPLETE
+  [would delete] stack udacity-agentcore (tables, buckets, vector bucket + indexes, role, log group)
+
+6. Leftovers outside / after the stack
+  [would delete] empty + delete bucket udacity-agentcore-policy-docs-327887916689-d4f11210
+  [would delete] vector index returns-policy-index in udacity-agentcore-vectors-327887916689-d4f11210
+  [would delete] vector index shipping-policy-index in udacity-agentcore-vectors-327887916689-d4f11210
+  [would delete] vector index warranty-policy-index in udacity-agentcore-vectors-327887916689-d4f11210
+  [would delete] vector bucket udacity-agentcore-vectors-327887916689-d4f11210
+  [would delete] table udacity-agentcore-customers
+  [would delete] table udacity-agentcore-orders
+  [would delete] table udacity-agentcore-workflow-state
+  [would delete] inline policy AgentCoreProjectPolicy of udacity-agentcore-agentcore-role
+  [would delete] role udacity-agentcore-agentcore-role
+  [would delete] log group /aws/bedrock/agentcore/udacity-agentcore
+  [would delete] log group /aws/bedrock-agentcore/runtimes/udacity_agentcore_runtime-hFEH18DWmq-DEFAULT
+
+25 deletion(s) planned. Re-run with --yes to execute.

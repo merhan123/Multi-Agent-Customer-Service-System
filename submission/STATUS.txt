@@ -1,0 +1,11 @@
+Phase 4 status
+
+Runtime deployed and READY. Memory ACTIVE. CloudWatch INFO logging and X-Ray 100% sampling verified.
+Guardrail version 1: all five live behavior checks passed.
+Local tests: 13 passed. Full AWS test suite: 115/120.
+
+BLOCKER: Parallel policy retrievers and all three runtime scenarios fail on Claude model AccessDeniedException. Bedrock model availability reports agreementAvailability NOT_AVAILABLE for Haiku 4.5 and Sonnet 4.5, while authorization, entitlement and region are available. Ask the AWS lab administrator to resolve the model agreement/access, then rerun the full suite and scenarios.
+
+Screenshots are outstanding: no connected browser was available, and the suite has not earned 120/120. Do not present the current results as all passed.
+
+No cleanup performed; keep resources until submission is accepted.

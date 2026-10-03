@@ -1,0 +1,115 @@
+Running local agent test...
+
+────────────────────────────────────────────────────────────
+Session: e53fe933 | Customer: CUST-001
+Query: I want to return my wireless headphones from order ORD-27176
+Traceback (most recent call last):
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/src/agent_orchestrator.py", line 1601, in <module>
+    run_test_scenarios()
+    ~~~~~~~~~~~~~~~~~~^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/src/agent_orchestrator.py", line 1414, in run_test_scenarios
+    response = orchestrator(prompt)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 881, in __call__
+    return run_async(
+        lambda: self._invoke_async_and_flush(
+    ...<8 lines>...
+        )
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 45, in run_async
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/opentelemetry/instrumentation/threading/__init__.py", line 162, in wrapped_func
+    return original_func(*func_args, **func_kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 38, in execute
+    return asyncio.run(execute_async())
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 33, in execute_async
+    return await async_func()
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 902, in _invoke_async_and_flush
+    return await self.invoke_async(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 984, in invoke_async
+    async for event in events:
+        _ = event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1398, in stream_async
+    async for event in events:
+    ...<8 lines>...
+            yield as_dict
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1542, in _run_loop
+    async for event in self._middleware_registry.invoke(
+    ...<11 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_middleware/registry.py", line 167, in invoke
+    async for event in gen:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1697, in terminal
+    async for event in events:
+    ...<17 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1752, in _execute_event_loop_cycle
+    async for event in events:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 302, in event_loop_cycle
+    async for model_event in model_events:
+        if not isinstance(model_event, ModelStopReason):
+            yield model_event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 691, in _handle_model_execution
+    raise e
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 609, in _handle_model_execution
+    async for event in agent._middleware_registry.invoke(
+    ...<5 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_middleware/registry.py", line 167, in invoke
+    async for event in gen:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 740, in terminal
+    async for event in stream_messages(
+    ...<12 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/streaming.py", line 572, in stream_messages
+    async for event in process_stream(chunks, start_time, cancel_signal):
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/streaming.py", line 460, in process_stream
+    async for chunk in chunks:
+    ...<36 lines>...
+            handle_redact_content(chunk["redactContent"], state)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/models/bedrock.py", line 1402, in stream
+    await task
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/opentelemetry/instrumentation/threading/__init__.py", line 162, in wrapped_func
+    return original_func(*func_args, **func_kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/models/bedrock.py", line 1562, in _stream
+    raise e
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/models/bedrock.py", line 1452, in _stream
+    response = converse_method(**request)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/client.py", line 606, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/client.py", line 1094, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.AccessDeniedException: An error occurred (AccessDeniedException) when calling the ConverseStream operation: The system encountered an unexpected error during processing. Try your request again.
+└ Bedrock region: us-east-1
+└ Model id: us.anthropic.claude-haiku-4-5-20251001-v1:0

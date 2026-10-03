@@ -7,6 +7,20 @@ import agentcore_cli
 
 
 class DeploymentTests(unittest.TestCase):
+    def test_observability_applies_logging_and_full_sampling(self):
+        with patch.dict(config.__dict__, {'AGENT_LOG_GROUP':'/test/novamart'}), \
+             patch.object(ao, 'apply_observability_config', return_value={'log_group':'/test/novamart'}) as apply:
+            ao.configure_observability('runtime-arn')
+        apply.assert_called_once_with('runtime-arn', {
+            'cloudWatchConfig':{'logGroupName':'/test/novamart','logLevel':'INFO','enabled':True},
+            'xRayConfig':{'enabled':True,'samplingRate':1.0}})
+
+    def test_observability_failure_is_not_reported_as_success(self):
+        with patch.dict(config.__dict__, {'AGENT_LOG_GROUP':'/test/novamart'}), \
+             patch.object(ao, 'apply_observability_config', side_effect=RuntimeError('Access denied')):
+            with self.assertRaisesRegex(RuntimeError, 'Access denied'):
+                ao.configure_observability('runtime-arn')
+
     def test_guardrail_policies_and_numbered_version(self):
         client = Mock()
         client.list_guardrails.return_value = {'guardrails': []}

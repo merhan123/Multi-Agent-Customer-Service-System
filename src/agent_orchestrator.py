@@ -414,7 +414,15 @@ def build_policy_agent() -> Agent:
     # TODO (implemented below): Build ReturnsPolicyRetrieverAgent
     @tool
     def retrieve_returns_policy(query: str) -> str:
-        """Retrieve relevant passages from the Returns Policy knowledge base."""
+        """Retrieve relevant passages from the Returns Policy knowledge base.
+
+        Args:
+            query: The customer's policy question used to search this domain.
+
+        Returns:
+            Formatted policy passages with source citations, or a message
+            describing missing configuration or unavailable results.
+        """
         return format_kb_results(retrieve_from_knowledge_base(config.RETURNS_KB_ID, query))
 
     # Create the ReturnsPolicyRetrieverAgent with the tool above
@@ -426,7 +434,15 @@ def build_policy_agent() -> Agent:
     # TODO (implemented below): Build ShippingPolicyRetrieverAgent
     @tool
     def retrieve_shipping_policy(query: str) -> str:
-        """Retrieve relevant passages from the Shipping Policy knowledge base."""
+        """Retrieve relevant passages from the Shipping Policy knowledge base.
+
+        Args:
+            query: The customer's policy question used to search this domain.
+
+        Returns:
+            Formatted policy passages with source citations, or a message
+            describing missing configuration or unavailable results.
+        """
         return format_kb_results(retrieve_from_knowledge_base(config.SHIPPING_KB_ID, query))
 
     # Create the ShippingPolicyRetrieverAgent with the tool above
@@ -438,7 +454,15 @@ def build_policy_agent() -> Agent:
     # TODO (implemented below): Build WarrantyPolicyRetrieverAgent
     @tool
     def retrieve_warranty_policy(query: str) -> str:
-        """Retrieve relevant passages from the Warranty Policy knowledge base."""
+        """Retrieve relevant passages from the Warranty Policy knowledge base.
+
+        Args:
+            query: The customer's policy question used to search this domain.
+
+        Returns:
+            Formatted policy passages with source citations, or a message
+            describing missing configuration or unavailable results.
+        """
         return format_kb_results(retrieve_from_knowledge_base(config.WARRANTY_KB_ID, query))
 
     # Create the WarrantyPolicyRetrieverAgent with the tool above

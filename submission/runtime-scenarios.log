@@ -1,0 +1,9 @@
+
+CUSTOMER: CUST-001 QUERY: I want to return my wireless headphones from order ORD-27176
+RuntimeClientError An error occurred (RuntimeClientError) when calling the InvokeAgentRuntime operation: Received error (500) from runtime. Please check your CloudWatch logs for more information.
+
+CUSTOMER: CUST-002 QUERY: What is the return policy for premium customers?
+RuntimeClientError An error occurred (RuntimeClientError) when calling the InvokeAgentRuntime operation: Received error (500) from runtime. Please check your CloudWatch logs for more information.
+
+CUSTOMER: CUST-003 QUERY: How much would 5 items at $29.99 be with a 10% discount?
+RuntimeClientError An error occurred (RuntimeClientError) when calling the InvokeAgentRuntime operation: Received error (500) from runtime. Please check your CloudWatch logs for more information.

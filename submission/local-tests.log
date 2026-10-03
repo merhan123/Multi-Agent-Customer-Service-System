@@ -1,0 +1,15 @@
+..Guardrail already exists: existing (version: 2)
+  Memory created: memory-arn  (status: CREATING)
+  Waiting for memory status ACTIVE.... ready.
+CloudWatch log group: /test/novamart; X-Ray sampling rate: 1.0
+[Note] Observability configuration failed: Access denied
+  AWS Account: 123456789012  |  Region: us-east-1
+  Runtime: udacity_agentcore_runtime  |  CLI project: agentcore/agentcore.json (stack AgentCore-udacity-default)
+  Runtime deployed: arn:aws:bedrock-agentcore:us-east-1:123456789012:runtime/test
+  Waiting for runtime status READY.2026-10-03 22:25:56,344 - agent_orchestrator - WARNING - WorkflowState version conflict on attempt 1, retrying...
+.......
+----------------------------------------------------------------------
+Ran 13 tests in 0.018s
+
+OK
+ ready.

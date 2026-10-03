@@ -1,0 +1,75 @@
+MODEL us.anthropic.claude-haiku-4-5-20251001-v1:0 {'ResponseMetadata': {'RequestId': 'fa1240f7-739a-4150-b32d-de17d2a128d9', 'HTTPStatusCode': 200, 'HTTPHeaders': {'date': 'Sat, 03 Oct 2026 19:35:43 GMT', 'content-type': 'application/json', 'content-length': '229', 'connection': 'keep-alive', 'x-amzn-requestid': 'fa1240f7-739a-4150-b32d-de17d2a128d9'}, 'RetryAttempts': 0}, 'modelId': 'anthropic.claude-haiku-4-5-20251001-v1', 'agreementAvailability': {'status': 'NOT_AVAILABLE'}, 'authorizationStatus': 'AUTHORIZED', 'entitlementAvailability': 'AVAILABLE', 'regionAvailability': 'AVAILABLE'}
+MODEL us.anthropic.claude-sonnet-4-5-20250929-v1:0 {'ResponseMetadata': {'RequestId': '8697ae2b-7479-4345-9b8e-d764ed4e3918', 'HTTPStatusCode': 200, 'HTTPHeaders': {'date': 'Sat, 03 Oct 2026 19:35:44 GMT', 'content-type': 'application/json', 'content-length': '230', 'connection': 'keep-alive', 'x-amzn-requestid': '8697ae2b-7479-4345-9b8e-d764ed4e3918'}, 'RetryAttempts': 0}, 'modelId': 'anthropic.claude-sonnet-4-5-20250929-v1', 'agreementAvailability': {'status': 'NOT_AVAILABLE'}, 'authorizationStatus': 'AUTHORIZED', 'entitlementAvailability': 'AVAILABLE', 'regionAvailability': 'AVAILABLE'}
+LOG GROUP /aws/bedrock/agentcore/udacity-agentcore
+2026-10-03 22:31:05,935 INFO novamart.observability trace 1-6ac157f9-7e1f7e31d990dcd3243181fc started | session=e53fe933 customer=CUST-001
+2026-10-03 22:31:07,422 INFO novamart.observability trace 1-6ac157f9-7e1f7e31d990dcd3243181fc published to X-Ray (426 bytes)
+2026-10-03 21:48:25,811 INFO novamart.observability trace 1-6ac14df9-910f70234125a54781235948 started | session=8c2f89b5 customer=CUST-001
+2026-10-03 21:48:29,198 INFO novamart.observability tool call  initialize_session session_id='8c2f89b5' customer_id='CUST-001'
+2026-10-03 21:48:29,198 INFO novamart.observability tool call  route_to_inventory_agent session_id='8c2f89b5' customer_id='CUST-001' request='I want to return my wireless headphones from order ORD-27176'
+2026-10-03 21:48:30,109 INFO novamart.observability tool done  initialize_session (0.91s)
+2026-10-03 21:48:31,968 INFO novamart.observability tool call  route_to_inventory_agent session_id='8c2f89b5' customer_id='CUST-001' request='I want to return my wireless headphones from order ORD-27176'
+2026-10-03 21:48:35,606 INFO novamart.observability tool call  get_customer_tier customer_id='CUST-001'
+2026-10-03 21:48:35,609 INFO novamart.observability tool call  check_order_status customer_id='CUST-001' order_id='ORD-27176'
+2026-10-03 21:48:35,765 INFO novamart.observability tool done  check_order_status (0.16s)
+2026-10-03 21:48:35,765 INFO novamart.observability tool done  get_customer_tier (0.16s)
+2026-10-03 21:48:40,280 INFO novamart.observability tool done  route_to_inventory_agent (8.31s)
+2026-10-03 21:48:41,752 INFO novamart.observability tool call  route_to_refund_agent session_id='8c2f89b5' customer_id='CUST-001' request='I want to return my wireless headphones from order ORD-27176'
+2026-10-03 21:48:44,702 INFO novamart.observability tool call  get_inventory_context session_id='8c2f89b5'
+2026-10-03 21:48:44,839 INFO novamart.observability tool done  get_inventory_context (0.14s)
+2026-10-03 21:48:49,032 INFO novamart.observability tool done  route_to_refund_agent (7.28s)
+2026-10-03 21:48:50,303 INFO novamart.observability tool call  route_to_communication_agent session_id='8c2f89b5' customer_id='CUST-001' original_request='I want to return my wireless headphones from order ORD-27176'
+2026-10-03 21:48:52,779 INFO novamart.observability tool call  get_full_workflow_context session_id='8c2f89b5'
+2026-10-03 21:48:52,915 INFO novamart.observability tool done  get_full_workflow_context (0.14s)
+2026-10-03 21:48:57,187 INFO novamart.observability tool done  route_to_communication_agent (6.88s)
+2026-10-03 21:48:59,239 INFO novamart.observability trace 1-6ac14df9-910f70234125a54781235948 published to X-Ray (2238 bytes)
+LOG GROUP /aws/bedrock-agentcore/runtimes/udacity_agentcore_runtime-hFEH18DWmq-DEFAULT
+  File "/opt/aws/agentcore-runtime/python/versions/3.12.12/lib/python3.12/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/aws/agentcore-runtime/python/versions/3.12.12/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/task/opentelemetry/instrumentation/threading/__init__.py", line 162, in wrapped_func
+    return original_func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/task/strands/models/bedrock.py", line 1562, in _stream
+    raise e
+  File "/var/task/strands/models/bedrock.py", line 1452, in _stream
+    response = converse_method(**request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/task/botocore/client.py", line 606, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/task/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/task/botocore/client.py", line 1094, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.AccessDeniedException: An error occurred (AccessDeniedException) when calling the ConverseStream operation: The system encountered an unexpected error during processing. Try your request again.
+└ Bedrock region: us-east-1
+└ Model id: us.anthropic.claude-haiku-4-5-20251001-v1:0
+  File "/opt/aws/agentcore-runtime/python/versions/3.12.12/lib/python3.12/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/opt/aws/agentcore-runtime/python/versions/3.12.12/lib/python3.12/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+             ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/task/opentelemetry/instrumentation/threading/__init__.py", line 162, in wrapped_func
+    return original_func(*func_args, **func_kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/task/strands/models/bedrock.py", line 1562, in _stream
+    raise e
+  File "/var/task/strands/models/bedrock.py", line 1452, in _stream
+    response = converse_method(**request)
+               ^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/task/botocore/client.py", line 606, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/var/task/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^
+  File "/var/task/botocore/client.py", line 1094, in _make_api_call
+    raise error_class(parsed_response, operation_name)
+botocore.errorfactory.AccessDeniedException: An error occurred (AccessDeniedException) when calling the ConverseStream operation: The system encountered an unexpected error during processing. Try your request again.
+└ Bedrock region: us-east-1
+└ Model id: us.anthropic.claude-haiku-4-5-20251001-v1:0
