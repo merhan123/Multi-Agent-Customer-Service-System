@@ -1,11 +1,22 @@
-Phase 4 status
+Alternative-model workaround status
 
-Runtime deployed and READY. Memory ACTIVE. CloudWatch INFO logging and X-Ray 100% sampling verified.
-Guardrail version 1: all five live behavior checks passed.
-Local tests: 13 passed. Full AWS test suite: 115/120.
+Active orchestrator and worker model: us.amazon.nova-pro-v1:0.
+Claude Haiku 4.5 and Sonnet 4.5 remain the code defaults, but .env and the
+runtime explicitly select Nova Pro because Claude access was unavailable.
+The refreshed AWS credentials are stored outside this project.
 
-BLOCKER: Parallel policy retrievers and all three runtime scenarios fail on Claude model AccessDeniedException. Bedrock model availability reports agreementAvailability NOT_AVAILABLE for Haiku 4.5 and Sonnet 4.5, while authorization, entitlement and region are available. Ask the AWS lab administrator to resolve the model agreement/access, then rerun the full suite and scenarios.
+Final automated suite: 120/120 with Nova. Offline checks: 14 passed.
+The course tests compare configured model IDs; their printed Claude labels
+are fixed text. This score does NOT prove compliance with the exact Claude
+model requirement. Obtain reviewer approval for substitution or restore
+Claude after Udacity support resolves access and repeat the tests.
 
-Screenshots are outstanding: no connected browser was available, and the suite has not earned 120/120. Do not present the current results as all passed.
+All three local scenarios completed. Deployed runtime math returned $134.96.
+X-Ray get_trace_graph confirmed NovaMart-Orchestrator, PolicyAgent,
+CommunicationAgent and all three KnowledgeBase nodes for policy trace:
+1-6ac279be-cf3e898f2512181c8e9af96a
+Runtime math trace: 1-6ac27ea2-240b546fe0ff207f824177fd
 
-No cleanup performed; keep resources until submission is accepted.
+Screenshots remain outstanding. Capture genuine AWS console and terminal
+screenshots. Source code, populated .env and logs are included in the draft
+archive. No resources have been cleaned up.

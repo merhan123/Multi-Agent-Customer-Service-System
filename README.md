@@ -604,11 +604,13 @@ The first deploy bootstraps CDK (`CDKToolkit` stack) - make sure your credential
 
 ## Resubmission evidence
 
-The latest full test run scored **115/120**. Parallel agent RAG is blocked by
-Claude AccessDeniedException; this is not a passing submission yet. Udacity
-support must resolve model access before collecting successful test evidence.
-The model IDs documented in `.env` match the fixed constants in `config.py`;
-the constants are the source of truth for local and deployed agent selection.
+Claude runs scored **115/120** because parallel agent RAG hit AccessDeniedException.
+An explicitly configured Amazon Nova workaround now passes Task 5 (25/25).
+This demonstrates functionality but requires reviewer approval for model substitution.
+Model IDs in `.env` override the Claude defaults in `config.py` and are passed
+to the deployed runtime. The current workaround uses Nova Pro for routing and
+Nova Pro for workers. This does not meet the exact Claude model rubric without
+reviewer approval, even if the automated suite awards full points.
 Keep the runtime protocol HTTP as required by the rubric.
 
 After access is restored, run and screenshot each command:
@@ -638,3 +640,21 @@ It explicitly includes a populated `.env` with only approved configuration
 fields, even though `.env` is hidden and gitignored. AWS credentials are excluded.
 The archive is a draft until every screenshot above is present and tests pass.
 Do not delete AWS resources until evidence is saved and submission is complete.
+
+
+### Switching models
+
+`config.py` reads `ORCHESTRATOR_MODEL_ID` and `WORKER_MODEL_ID` from the
+process environment or `.env`, defaulting to the required Claude models.
+The deploy command passes both selections into AgentCore Runtime.
+The active workaround uses `us.amazon.nova-pro-v1:0` for the orchestrator and
+`us.amazon.nova-pro-v1:0` for workers. To restore the rubric models, set:
+
+```dotenv
+ORCHESTRATOR_MODEL_ID=us.anthropic.claude-haiku-4-5-20251001-v1:0
+WORKER_MODEL_ID=us.anthropic.claude-sonnet-4-5-20250929-v1:0
+```
+
+Then redeploy and rerun the suite. The supplied course test compares models
+against config constants, while its printed labels always say Claude.
+A full automated score with Nova does not establish Claude rubric compliance.

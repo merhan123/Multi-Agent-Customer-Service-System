@@ -33,6 +33,13 @@ class WorkflowTests(unittest.TestCase):
             p.start()
             self.addCleanup(p.stop)
 
+    def test_discount_rounds_only_final_total(self):
+        calculator = ao.build_communication_agent().tools[1]
+        self.assertEqual(calculator(5, '29.99', '10')['final_total'], '134.96')
+        self.assertEqual(calculator(5, '29.99', '10')['discount_amount'], '14.995')
+        self.assertIn('error', calculator(1, 'NaN', '10'))
+        self.assertIn('error', calculator(0, '10', '20'))
+
     def refund(self, tier, days, status='delivered', reference=None):
         order = {'order_date': (datetime.now(timezone.utc).date()-timedelta(days=days)).isoformat(),
                  'status': status, 'price': '89.99', 'quantity': '2'}

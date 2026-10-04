@@ -69,6 +69,14 @@
         {
           "name": "AGENT_TRACE_SAMPLING_RATE",
           "value": "1.0"
+        },
+        {
+          "name": "ORCHESTRATOR_MODEL_ID",
+          "value": "us.amazon.nova-pro-v1:0"
+        },
+        {
+          "name": "WORKER_MODEL_ID",
+          "value": "us.amazon.nova-pro-v1:0"
         }
       ]
     }

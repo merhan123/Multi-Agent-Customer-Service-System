@@ -1,0 +1,128 @@
+Running local agent test...
+
+────────────────────────────────────────────────────────────
+Session: 594d9b5f | Customer: CUST-001
+Query: I want to return my wireless headphones from order ORD-27176
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 01 ]  INVENTORY AGENT
+             Role  : Fetch order details and customer tier from DynamoDB
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 6.9s  (LLM may still stream final text below)
+             State  : DynamoDB[inventory_agent]  version 0 -> 1
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 02 ]  REFUND AGENT
+             Role  : Evaluate return eligibility using inventory and policy data
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 6.9s  (LLM may still stream final text below)
+             State  : DynamoDB[refund_agent]  version 1 -> 2
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 03 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 2 -> 3
+Response: ---
+
+Thank you for reaching out regarding your wireless headphones from order ORD-27176. As a Premium tier member, you have a 60-day return window from the delivery date, which was on 2026-09-26. Since today is 2026-10-04, you are still within the return period.
+
+To proceed with the return, could you please provide me with the reason for the return? This information is necessary to facilitate the return process. Once I have this information, I will be able to assist you further.
+
+
+  X-Ray trace 1-6ac2685c-fd7609d5a3ed0bacab20f51c published successfully.
+  Allow 30-60 seconds, then open the Service Map and select 'Last 5 minutes':
+  https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#xray:service-map/map
+  Submission step: take a screenshot showing the full NovaMart-Orchestrator → worker-agent call chain.
+
+────────────────────────────────────────────────────────────
+Session: 278f0bea | Customer: CUST-002
+Query: What is the return policy for premium customers?
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 04 ]  POLICY AGENT
+             Role  : Multi-Agent RAG -- parallel KB retrieval + synthesis
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+    [PARALLEL RETRIEVAL - START]  Spawning 3 sub-agents concurrently via ThreadPoolExecutor
+    ──────────────────────────────────────────────────────
+    +-- [SUB-AGENT 01]  ReturnsRetriever   KB-ID: VKKS5Q6GIP
+    +-- [SUB-AGENT 02]  ShippingRetriever  KB-ID: CBEKORPLSI
+    +-- [SUB-AGENT 03]  WarrantyRetriever  KB-ID: WZHJH6AI6W
+    Retrieving in parallel... (sub-agent output suppressed - clean results printed sequentially after [END])
+    ──────────────────────────────────────────────────────
+    [PARALLEL RETRIEVAL - END]  All 3 KBs responded  Elapsed: 10.6s
+
+    [SUB-AGENT 01]  ReturnsRetriever   KB: VKKS5Q6GIP
+      | The return policy for premium customers at NovaMart includes an extended 60-day return window. This is in addition to other benefits such as free expedited shipping, a 3-year warranty on electronics, priority customer support, early access to sales, and a dedicated account manager for orders over $500. 
+      | Here are the relevant passages from the Returns Policy:
+      | - **[Passage 1]** NovaMart Customer Tier Program: "PREMIUM TIER [...] Benefits: - Extended 60-day return window [...]" [Source](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/customer_tiers.txt)
+      | - **[Passage 2]** NovaMart Return Policy: "STANDARD RETURN WINDOW [...] Premium tier customers receive an extended 60-day return window." [Source](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/return_policy.txt)
+
+    [SUB-AGENT 02]  ShippingRetriever  KB: CBEKORPLSI
+      | The return policy for premium customers at NovaMart is as follows:
+      | - **Return Window:** Premium customers have an extended 60-day return window.
+      | - **Shipping:** Free expedited shipping is provided on all orders.
+      | - **Warranty:** A 3-year warranty is offered on electronics.
+      | - **Customer Support:** Priority customer support with a response time within 4 hours.
+      | - **Additional Benefits:** Early access to sales and new product launches, and a dedicated account manager for orders over $500.
+      | Source: [NovaMart Customer Tier Program](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/shipping/customer_tiers.txt)
+
+    [SUB-AGENT 03]  WarrantyRetriever  KB: WZHJH6AI6W
+      | The return policy for premium customers at NovaMart is as follows:
+      | - **Return Window:** Premium customers have an extended 60-day return window.
+      | - **Shipping:** Free expedited shipping is provided on all orders.
+      | - **Warranty:** A 3-year warranty is offered on electronics.
+      | - **Customer Support:** Priority customer support with a response time of within 4 hours.
+      | - **Additional Benefits:** Early access to sales and new product launches, and a dedicated account manager for orders over $500.
+      | Source: [NovaMart Customer Tier Program](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/warranty/customer_tiers.txt)
+             Status : [COMPLETE]  Elapsed: 20.7s  (LLM may still stream final text below)
+             State  : DynamoDB[policy_agent]  version 0 -> 1
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 05 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 11.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 1 -> 2
+Response: Thank you for your inquiry about the return policy for premium customers.
+
+Based on the recorded findings, the return policy for premium customers at NovaMart includes an extended 60-day return window. This is in addition to other benefits such as free expedited shipping, a 3-year warranty on electronics, priority customer support, early access to sales, and a dedicated account manager for orders over $500.
+
+Here are the relevant passages from the Returns Policy:
+- **[Passage 1]** NovaMart Customer Tier Program: "PREMIUM TIER [...] Benefits: - Extended 60-day return window [...]" [Source](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/customer_tiers.txt)
+- **[Passage 2]** NovaMart Return Policy: "STANDARD RETURN WINDOW [...] Premium tier customers receive an extended 60-day return window." [Source](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/return_policy.txt)
+
+If you have any further questions or need additional information, please let me know.
+
+
+  X-Ray trace 1-6ac26886-8287ef9ddaed65029b050261 published successfully.
+  Allow 30-60 seconds, then open the Service Map and select 'Last 5 minutes':
+  https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#xray:service-map/map
+  Submission step: take a screenshot showing the full NovaMart-Orchestrator → worker-agent call chain.
+
+────────────────────────────────────────────────────────────
+Session: e9303d20 | Customer: CUST-003
+Query: How much would 5 items at $29.99 be with a 10% discount?
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 06 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 0 -> 1
+Response: The total cost of 5 items at $29.99 each before the discount is $149.95. With a 10% discount, the discount amount is $14.995, which rounds to $15.00. Subtracting the discount from the total cost before the discount gives us $134.95. 
+
+So, the total cost for 5 items at $29.99 each with a 10% discount is $134.95.
+
+
+  X-Ray trace 1-6ac268ba-e451780a508a5ef98eb4bee8 published successfully.
+  Allow 30-60 seconds, then open the Service Map and select 'Last 5 minutes':
+  https://console.aws.amazon.com/cloudwatch/home?region=us-east-1#xray:service-map/map
+  Submission step: take a screenshot showing the full NovaMart-Orchestrator → worker-agent call chain.

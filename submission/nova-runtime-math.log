@@ -1,0 +1,6 @@
+Invoking arn:aws:bedrock-agentcore:us-east-1:327887916689:runtime/udacity_agentcore_runtime-hFEH18DWmq
+Session: 393bef61 | Customer: CUST-001
+Query: How much are 5 items at $29.99 with 10% off?
+
+Response: The total cost for 5 items at $29.99 each with a 10% discount is $134.96. The discount amount is $14.995, resulting in a final total of $134.96.
+X-Ray trace: 1-6ac27ea2-240b546fe0ff207f824177fd

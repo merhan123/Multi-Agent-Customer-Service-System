@@ -1,0 +1,1867 @@
+Running local agent test...
+
+────────────────────────────────────────────────────────────
+Session: 49b22854 | Customer: CUST-001
+Query: I want to return my wireless headphones from order ORD-27176
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 01 ]  INVENTORY AGENT
+             Role  : Fetch order details and customer tier from DynamoDB
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.2s  (LLM may still stream final text below)
+             State  : DynamoDB[inventory_agent]  version 0 -> 1
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 02 ]  REFUND AGENT
+             Role  : Evaluate return eligibility using inventory and policy data
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 6.0s  (LLM may still stream final text below)
+             State  : DynamoDB[refund_agent]  version 1 -> 2
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 03 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 2 -> 3
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 04 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 11.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 3 -> 4
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 05 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 4 -> 5
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 06 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 5 -> 6
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 07 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 6 -> 7
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 08 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 7 -> 8
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 09 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 8 -> 9
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 10 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 9 -> 10
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 11 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 10 -> 11
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 12 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 11 -> 12
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 13 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 12 -> 13
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 14 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 13 -> 14
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 15 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 14 -> 15
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 16 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 15 -> 16
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 17 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 16 -> 17
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 18 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 17 -> 18
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 19 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 18 -> 19
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 20 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 19 -> 20
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 21 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 20 -> 21
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 22 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 21 -> 22
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 23 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 22 -> 23
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 24 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 23 -> 24
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 25 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 24 -> 25
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 26 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 25 -> 26
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 27 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 26 -> 27
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 28 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 27 -> 28
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 29 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 28 -> 29
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 30 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 29 -> 30
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 31 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 30 -> 31
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 32 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 31 -> 32
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 33 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 32 -> 33
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 34 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 33 -> 34
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 35 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 34 -> 35
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 36 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 35 -> 36
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 37 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 36 -> 37
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 38 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 37 -> 38
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 39 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 38 -> 39
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 40 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 39 -> 40
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 41 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 40 -> 41
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 42 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 41 -> 42
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 43 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 42 -> 43
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 44 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 43 -> 44
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 45 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 44 -> 45
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 46 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 45 -> 46
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 47 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 46 -> 47
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 48 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 47 -> 48
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 49 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 48 -> 49
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 50 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 49 -> 50
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 51 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 50 -> 51
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 52 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 51 -> 52
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 53 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 52 -> 53
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 54 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 53 -> 54
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 55 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 54 -> 55
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 56 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 55 -> 56
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 57 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 56 -> 57
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 58 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 57 -> 58
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 59 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 58 -> 59
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 60 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 59 -> 60
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 61 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 60 -> 61
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 62 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 61 -> 62
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 63 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 62 -> 63
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 64 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 63 -> 64
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 65 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 64 -> 65
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 66 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 65 -> 66
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 67 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 66 -> 67
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 68 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 67 -> 68
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 69 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 12.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 68 -> 69
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 70 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 11.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 69 -> 70
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 71 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 70 -> 71
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 72 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 71 -> 72
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 73 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 72 -> 73
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 74 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 73 -> 74
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 75 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 74 -> 75
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 76 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 75 -> 76
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 77 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 76 -> 77
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 78 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 77 -> 78
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 79 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 78 -> 79
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 80 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 11.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 79 -> 80
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 81 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 11.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 80 -> 81
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 82 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 81 -> 82
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 83 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 82 -> 83
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 84 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 83 -> 84
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 85 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 84 -> 85
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 86 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 85 -> 86
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 87 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 14.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 86 -> 87
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 88 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 87 -> 88
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 89 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 88 -> 89
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 90 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 89 -> 90
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 91 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 90 -> 91
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 92 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 91 -> 92
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 93 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 92 -> 93
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 94 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 93 -> 94
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 95 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 94 -> 95
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 96 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 95 -> 96
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 97 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 96 -> 97
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 98 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 97 -> 98
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 99 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 98 -> 99
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 100 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 99 -> 100
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 101 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 100 -> 101
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 102 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 101 -> 102
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 103 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 102 -> 103
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 104 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 103 -> 104
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 105 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 104 -> 105
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 106 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 105 -> 106
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 107 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 106 -> 107
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 108 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 107 -> 108
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 109 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 11.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 108 -> 109
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 110 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 14.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 109 -> 110
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 111 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 110 -> 111
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 112 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 111 -> 112
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 113 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 112 -> 113
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 114 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 11.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 113 -> 114
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 115 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 23.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 114 -> 115
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 116 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 115 -> 116
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 117 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 116 -> 117
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 118 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 117 -> 118
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 119 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 118 -> 119
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 120 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 119 -> 120
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 121 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 120 -> 121
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 122 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 121 -> 122
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 123 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 122 -> 123
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 124 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 123 -> 124
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 125 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 124 -> 125
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 126 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 125 -> 126
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 127 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 126 -> 127
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 128 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 127 -> 128
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 129 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 128 -> 129
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 130 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 129 -> 130
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 131 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 21.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 130 -> 131
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 132 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 480.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 131 -> 132
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 133 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 132 -> 133
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 134 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 133 -> 134
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 135 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 134 -> 135
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 136 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 135 -> 136
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 137 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 136 -> 137
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 138 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 137 -> 138
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 139 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 12.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 138 -> 139
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 140 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 13.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 139 -> 140
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 141 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 140 -> 141
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 142 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 141 -> 142
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 143 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 142 -> 143
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 144 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 143 -> 144
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 145 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 144 -> 145
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 146 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 145 -> 146
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 147 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 146 -> 147
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 148 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 147 -> 148
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 149 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 148 -> 149
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 150 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 149 -> 150
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 151 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 150 -> 151
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 152 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 151 -> 152
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 153 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 152 -> 153
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 154 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 153 -> 154
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 155 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 154 -> 155
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 156 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 155 -> 156
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 157 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 156 -> 157
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 158 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 157 -> 158
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 159 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 158 -> 159
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 160 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 159 -> 160
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 161 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 160 -> 161
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 162 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 161 -> 162
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 163 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 162 -> 163
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 164 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 163 -> 164
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 165 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 164 -> 165
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 166 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 165 -> 166
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 167 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 166 -> 167
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 168 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 167 -> 168
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 169 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 168 -> 169
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 170 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 169 -> 170
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 171 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 170 -> 171
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 172 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 171 -> 172
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 173 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 172 -> 173
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 174 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 173 -> 174
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 175 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 174 -> 175
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 176 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 175 -> 176
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 177 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 176 -> 177
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 178 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 177 -> 178
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 179 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 178 -> 179
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 180 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.6s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 179 -> 180
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 181 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 180 -> 181
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 182 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 181 -> 182
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 183 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 182 -> 183
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 184 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 183 -> 184
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 185 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 184 -> 185
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 186 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 185 -> 186
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 187 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 186 -> 187
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 188 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 187 -> 188
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 189 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 11.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 188 -> 189
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 190 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 189 -> 190
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 191 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 190 -> 191
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 192 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 191 -> 192
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 193 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 10.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 192 -> 193
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 194 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 193 -> 194
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 195 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 194 -> 195
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 196 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 195 -> 196
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 197 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 196 -> 197
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 198 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 197 -> 198
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 199 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 198 -> 199
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 200 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 199 -> 200
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 201 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 200 -> 201
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 202 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 201 -> 202
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 203 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 202 -> 203
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 204 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 203 -> 204
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 205 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 204 -> 205
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 206 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 205 -> 206
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 207 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 206 -> 207
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 208 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 207 -> 208
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 209 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 208 -> 209
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 210 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 209 -> 210
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 211 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 210 -> 211
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 212 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 211 -> 212
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 213 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 212 -> 213
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 214 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 213 -> 214
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 215 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 214 -> 215
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 216 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.2s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 215 -> 216
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 217 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.1s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 216 -> 217
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 218 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 217 -> 218
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 219 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 218 -> 219
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 220 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 219 -> 220
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 221 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 220 -> 221
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 222 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 221 -> 222
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 223 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.3s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 222 -> 223
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 224 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 9.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 223 -> 224
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 225 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 224 -> 225
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 226 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.7s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 225 -> 226
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 227 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 226 -> 227
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 228 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.0s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 227 -> 228
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 229 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.4s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 228 -> 229
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 230 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.8s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 229 -> 230
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 231 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 8.5s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 230 -> 231
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 232 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────
+             Status : [COMPLETE]  Elapsed: 7.9s  (LLM may still stream final text below)
+             State  : DynamoDB[communication_agent]  version 231 -> 232
+
+  ────────────────────────────────────────────────────────────────────
+  [ STEP 233 ]  COMMUNICATION AGENT
+             Role  : Compose the final customer-facing response
+             Model : us.amazon.nova-pro-v1:0
+  ────────────────────────────────────────────────────────────────────

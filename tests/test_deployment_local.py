@@ -73,7 +73,9 @@ class DeploymentTests(unittest.TestCase):
         deploy.assert_called_once_with()
         configure.assert_called_once_with(
             env_vars={**{k:values[k] for k in ('AWS_REGION','PROJECT_NAME','RETURNS_KB_ID','SHIPPING_KB_ID','WARRANTY_KB_ID','AGENT_LOG_GROUP')},
-                      'GUARDRAIL_ID':'guardrail-test','GUARDRAIL_VERSION':'1'},
+                      'GUARDRAIL_ID':'guardrail-test','GUARDRAIL_VERSION':'1',
+                      'ORCHESTRATOR_MODEL_ID':config.ORCHESTRATOR_MODEL_ID,
+                      'WORKER_MODEL_ID':config.WORKER_MODEL_ID},
             network_mode='PUBLIC', protocol='HTTP', execution_role_arn=values['AGENTCORE_ROLE_ARN'])
         wait.assert_called_once_with(ao.agentcore_control, 'test')
 

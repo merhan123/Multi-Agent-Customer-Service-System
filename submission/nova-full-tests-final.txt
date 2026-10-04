@@ -1,0 +1,115 @@
+
+───────────────────────────────────────────────────────
+  Task 2 - Multi-Agent Orchestration
+───────────────────────────────────────────────────────
+  ✓ PASS [+5pts] build_inventory_agent() returns an Agent object
+  ✓ PASS [+5pts] InventoryAgent has 3 tools (3 found)
+  ✓ PASS [+5pts] build_policy_agent() returns an Agent object
+  ✓ PASS [+5pts] PolicyAgent has 1 tool (1 found)
+  ✓ PASS [+5pts] build_orchestrator_agent() returns an Agent object
+  ✓ PASS [+5pts] OrchestratorAgent has 5 routing tools (5 found)
+  ✓ PASS [+5pts] OrchestratorAgent uses config.ORCHESTRATOR_MODEL_ID (Claude Haiku 4.5 - correct for routing)
+  ✓ PASS [+5pts] Worker agents use config.WORKER_MODEL_ID (Claude Sonnet 4.5 - correct for reasoning)
+  ✓ PASS [+0pts] build_policy_agent() runs the retrievers with ThreadPoolExecutor
+
+───────────────────────────────────────────────────────
+  Task 3 - AgentCore Deployment + Guardrails
+───────────────────────────────────────────────────────
+  ✓ PASS [+5pts] Guardrail 'udacity-agentcore-guardrail' exists in Bedrock
+  ✓ PASS [+5pts] Guardrail content, PII, topic and word policies match the specification
+  ✓ PASS [+3pts] Guardrail version 1 is published and READY
+  ✓ PASS [+7pts] AgentCore Runtime is READY (PUBLIC / HTTP) with guardrail + KB environment variables
+
+───────────────────────────────────────────────────────
+  Task 4 - Memory
+───────────────────────────────────────────────────────
+  ✓ PASS [+5pts] AgentCore Memory udacity_agentcore_memory-7Qy7S39ZfZ is ACTIVE
+  ✓ PASS [+5pts] Memory uses the SESSION_SUMMARY (summaryMemoryStrategy) strategy
+  ✓ PASS [+5pts] Memory eventExpiryDuration is 7 days
+
+───────────────────────────────────────────────────────
+  Task 5 - Bedrock Knowledge Bases
+───────────────────────────────────────────────────────
+  ✓ PASS [+5pts] RETURNS_KB_ID is set in environment (VKKS5Q6GIP)
+  ✓ PASS [+0pts] Returns Knowledge Base is ACTIVE
+  ✓ PASS [+0pts] Returns KB uses amazon.titan-embed-text-v2:0
+  ✓ PASS [+0pts] Returns KB data source has a completed sync
+  ✓ PASS [+5pts] SHIPPING_KB_ID is set in environment (CBEKORPLSI)
+  ✓ PASS [+0pts] Shipping Knowledge Base is ACTIVE
+  ✓ PASS [+0pts] Shipping KB uses amazon.titan-embed-text-v2:0
+  ✓ PASS [+0pts] Shipping KB data source has a completed sync
+  ✓ PASS [+5pts] WARRANTY_KB_ID is set in environment (WZHJH6AI6W)
+  ✓ PASS [+0pts] Warranty Knowledge Base is ACTIVE
+  ✓ PASS [+0pts] Warranty KB uses amazon.titan-embed-text-v2:0
+  ✓ PASS [+0pts] Warranty KB data source has a completed sync
+  ✓ PASS [+5pts] All three Knowledge Bases return passages for a policy question
+    [PARALLEL RETRIEVAL - START]  Spawning 3 sub-agents concurrently via ThreadPoolExecutor
+    ──────────────────────────────────────────────────────
+    +-- [SUB-AGENT 01]  ReturnsRetriever   KB-ID: VKKS5Q6GIP
+    +-- [SUB-AGENT 02]  ShippingRetriever  KB-ID: CBEKORPLSI
+    +-- [SUB-AGENT 03]  WarrantyRetriever  KB-ID: WZHJH6AI6W
+    Retrieving in parallel... (sub-agent output suppressed - clean results printed sequentially after [END])
+    ──────────────────────────────────────────────────────
+    [PARALLEL RETRIEVAL - END]  All 3 KBs responded  Elapsed: 11.9s
+
+    [SUB-AGENT 01]  ReturnsRetriever   KB: VKKS5Q6GIP
+      | The return window for premium customers is 60 days, and the warranty period is 3 years for electronics. 
+      | Here are the relevant passages from the Returns Policy:
+      | - **Return Window for Premium Customers:**
+      |   "Premium tier customers receive an extended 60-day return window." 
+      |   *Source: [s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/return_policy.txt](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/return_policy.txt)*
+      | - **Warranty Period:**
+      |   "PREMIUM TIER... 3-year warranty on electronics"
+      |   *Source: [s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/customer_tiers.txt](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/customer_tiers.txt)*
+
+    [SUB-AGENT 02]  ShippingRetriever  KB: CBEKORPLSI
+      | The return window for premium customers is 60 days, and the warranty period is 3 years for electronics. These details are outlined in the NovaMart Customer Tier Program. 
+      | Here is the relevant passage with source citation:
+      | ```
+      | PREMIUM TIER Requirements: Spend $500+ in a calendar year OR place 20+ orders in a calendar year. Benefits: - Extended 60-day return window - Free expedited shipping on all orders - 3-year warranty on electronics - Priority customer support: response within 4 hours - Early access to sales and new product launches - Dedicated account manager for orders over $500
+      | Source: s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/shipping/customer_tiers.txt
+      | ```
+
+    [SUB-AGENT 03]  WarrantyRetriever  KB: WZHJH6AI6W
+      | The return window for premium customers is 60 days, and the warranty duration is 3 years for electronics. Here are the relevant passages from the Warranty Policy:
+      | - **Return Window for Premium Customers:**
+      |   ```
+      |   NovaMart Customer Tier Program
+      |   ==============================
+      |   Last Updated: January 2025
+      |   PREMIUM TIER
+      |   Requirements: Spend $500+ in a calendar year OR place 20+ orders in a calendar year.
+      |   Benefits:
+      |   - Extended 60-day return window
+      |   - Free expedited shipping on all orders
+      |   - 3-year warranty on electronics
+      |   - Priority customer support: response within 4 hours
+      |   - Early access to sales and new product launches
+      |   - Dedicated account manager for orders over $500
+      |   Source: s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/warranty/customer_tiers.txt
+      |   ```
+      | - **Warranty Duration for Premium Customers:**
+      |   ```
+      |   NovaMart Warranty Policy
+      |   ==========================
+      |   Last Updated: January 2025
+      |   PREMIUM CUSTOMER WARRANTY
+      |   Premium tier customers receive an automatic 3-year warranty on all Electronics.
+      |   Source: s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/warranty/warranty_policy.txt
+      |   ```
+  ✓ PASS [+5pts] search_all_policies() returned combined results from the three retrievers (11.9s)
+
+───────────────────────────────────────────────────────
+  Task 6 - Observability
+───────────────────────────────────────────────────────
+  ✓ PASS [+10pts] CloudWatch logging enabled at INFO level → /aws/bedrock/agentcore/udacity-agentcore
+  ℹ INFO latest agent log stream: agentcore-runtime/localhost/2026-10-04/ae8a352a (1 min ago)
+  ✓ PASS [+10pts] X-Ray tracing enabled: 100% sampling, Transaction Search → CloudWatch Logs (ACTIVE)
+  ℹ INFO 4 NovaMart trace(s) received by X-Ray in the last 6 hours - open CloudWatch → X-Ray traces → Service map for the screenshot
+
+═══════════════════════════════════════════════════════
+  Score: 120/120 pts (100%)
+═══════════════════════════════════════════════════════
+
+  🎉 Perfect score! All tasks complete.
+

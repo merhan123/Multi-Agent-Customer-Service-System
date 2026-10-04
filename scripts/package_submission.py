@@ -24,7 +24,7 @@ def main():
                      if path.is_file() and '__pycache__' not in path.parts
                      and path.suffix in {'.py', '.yaml', '.yml', '.txt', '.png', '.jpg', '.jpeg'})
     with ZipFile(output, 'w', ZIP_DEFLATED) as archive:
-        archive.writestr('.env', '# Model IDs document the fixed config.py constants.\n' +
+        archive.writestr('.env', '# Model IDs are environment overrides read by config.py.\n' +
                          ''.join(f'{key}={values[key]}\n' for key in keys))
         for path in sorted(set(files)):
             archive.write(path, path.relative_to(root))

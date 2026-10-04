@@ -1,0 +1,60 @@
+
+[1m[96m───────────────────────────────────────────────────────[0m
+[1m[96m  Task 5 - Bedrock Knowledge Bases[0m
+[1m[96m───────────────────────────────────────────────────────[0m
+  [92m✓ PASS[0m [+5pts] RETURNS_KB_ID is set in environment (VKKS5Q6GIP)
+  [92m✓ PASS[0m [+0pts] Returns Knowledge Base is ACTIVE
+  [92m✓ PASS[0m [+0pts] Returns KB uses amazon.titan-embed-text-v2:0
+  [92m✓ PASS[0m [+0pts] Returns KB data source has a completed sync
+  [92m✓ PASS[0m [+5pts] SHIPPING_KB_ID is set in environment (CBEKORPLSI)
+  [92m✓ PASS[0m [+0pts] Shipping Knowledge Base is ACTIVE
+  [92m✓ PASS[0m [+0pts] Shipping KB uses amazon.titan-embed-text-v2:0
+  [92m✓ PASS[0m [+0pts] Shipping KB data source has a completed sync
+  [92m✓ PASS[0m [+5pts] WARRANTY_KB_ID is set in environment (WZHJH6AI6W)
+  [92m✓ PASS[0m [+0pts] Warranty Knowledge Base is ACTIVE
+  [92m✓ PASS[0m [+0pts] Warranty KB uses amazon.titan-embed-text-v2:0
+  [92m✓ PASS[0m [+0pts] Warranty KB data source has a completed sync
+  [92m✓ PASS[0m [+5pts] All three Knowledge Bases return passages for a policy question
+    [PARALLEL RETRIEVAL - START]  Spawning 3 sub-agents concurrently via ThreadPoolExecutor
+    ──────────────────────────────────────────────────────
+    +-- [SUB-AGENT 01]  ReturnsRetriever   KB-ID: VKKS5Q6GIP
+    +-- [SUB-AGENT 02]  ShippingRetriever  KB-ID: CBEKORPLSI
+    +-- [SUB-AGENT 03]  WarrantyRetriever  KB-ID: WZHJH6AI6W
+    Retrieving in parallel... (sub-agent output suppressed - clean results printed sequentially after [END])
+    ──────────────────────────────────────────────────────
+    [PARALLEL RETRIEVAL - END]  All 3 KBs responded  Elapsed: 12.0s
+
+    [SUB-AGENT 01]  ReturnsRetriever   KB: VKKS5Q6GIP
+      | The return window for premium customers is 60 days, and the warranty duration is 3 years. Here are the relevant passages from the Returns Policy:
+      | - **Return Window for Premium Customers:**
+      |   - "Premium tier customers receive an extended 60-day return window." [Source: s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/return_policy.txt]
+      | - **Warranty Duration:**
+      |   - "3-year warranty on electronics" [Source: s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/customer_tiers.txt]
+
+    [SUB-AGENT 02]  ShippingRetriever  KB: CBEKORPLSI
+      | The return window for premium customers is 60 days, and the warranty period is 3 years for electronics. Here are the details from the NovaMart Customer Tier Program:
+      | - **Premium Tier Benefits:**
+      |   - Extended 60-day return window
+      |   - Free expedited shipping on all orders
+      |   - 3-year warranty on electronics
+      |   - Priority customer support: response within 4 hours
+      |   - Early access to sales and new product launches
+      |   - Dedicated account manager for orders over $500
+      | Source: [NovaMart Customer Tier Program](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/shipping/customer_tiers.txt)
+
+    [SUB-AGENT 03]  WarrantyRetriever  KB: WZHJH6AI6W
+      | The return window for premium customers is 60 days, and the warranty duration is 3 years for electronics. Here are the details from the retrieved passages:
+      | - **Return Window:**
+      |   - "PREMIUM TIER... Benefits: - Extended 60-day return window..."
+      |   - Source: [s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/warranty/customer_tiers.txt](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/warranty/customer_tiers.txt)
+      | - **Warranty Duration:**
+      |   - "PREMIUM CUSTOMER WARRANTY Premium tier customers receive an automatic 3-year warranty on all Electronics."
+      |   - Source: [s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/warranty/warranty_policy.txt](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/warranty/warranty_policy.txt)
+  [92m✓ PASS[0m [+5pts] search_all_policies() returned combined results from the three retrievers (12.0s)
+
+═══════════════════════════════════════════════════════
+  [1mScore: [92m25/25 pts (100%)[0m
+═══════════════════════════════════════════════════════
+
+  [92m[1m🎉 Perfect score! All tasks complete.[0m
+
