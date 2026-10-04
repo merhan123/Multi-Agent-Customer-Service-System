@@ -600,3 +600,41 @@ The first deploy bootstraps CDK (`CDKToolkit` stack) - make sure your credential
 ## License
 
 [License](../../LICENSE.md)
+
+
+## Resubmission evidence
+
+The latest full test run scored **115/120**. Parallel agent RAG is blocked by
+Claude AccessDeniedException; this is not a passing submission yet. Udacity
+support must resolve model access before collecting successful test evidence.
+The model IDs documented in `.env` match the fixed constants in `config.py`;
+the constants are the source of truth for local and deployed agent selection.
+Keep the runtime protocol HTTP as required by the rubric.
+
+After access is restored, run and screenshot each command:
+
+```bash
+python tests/test_agent.py task2
+python tests/test_agent.py task3
+python tests/test_agent.py task4
+python tests/test_agent.py task5
+python tests/test_agent.py task6
+python src/agent_orchestrator.py test
+python tests/test_agent.py all
+```
+
+Save genuine screenshots in `submission/screenshots/`:
+
+- Tasks 2–6 results, successful scenarios, and the full **120/120** result.
+- AgentCore runtime details showing READY and the runtime ARN.
+- Each Returns, Shipping and Warranty KB: ID, Titan Embed Text v2 model,
+  S3 policy prefix, matching stack-created vector bucket/index, completed sync.
+- X-Ray Service Map showing NovaMart-Orchestrator connected to workers,
+  including PolicyAgent and Knowledge Base nodes. Run a policy scenario before
+  capturing the graph; allow time for traces to appear and select its time range.
+
+Build the review archive with `python scripts/package_submission.py`.
+It explicitly includes a populated `.env` with only approved configuration
+fields, even though `.env` is hidden and gitignored. AWS credentials are excluded.
+The archive is a draft until every screenshot above is present and tests pass.
+Do not delete AWS resources until evidence is saved and submission is complete.
