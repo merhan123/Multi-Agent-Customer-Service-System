@@ -1,22 +1,25 @@
-Alternative-model workaround status
+Resubmission evidence status
 
-Active orchestrator and worker model: us.amazon.nova-pro-v1:0.
-Claude Haiku 4.5 and Sonnet 4.5 remain the code defaults, but .env and the
-runtime explicitly select Nova Pro because Claude access was unavailable.
-The refreshed AWS credentials are stored outside this project.
+Project-root .env is included in the ZIP, is Git tracked, and contains all
+three KB IDs. submission/environment-config.txt is an identical visible copy.
+Neither file includes AWS access keys or session credentials.
 
-Final automated suite: 120/120 with Nova. Offline checks: 14 passed.
-The course tests compare configured model IDs; their printed Claude labels
-are fixed text. This score does NOT prove compliance with the exact Claude
-model requirement. Obtain reviewer approval for substitution or restore
-Claude after Udacity support resolves access and repeat the tests.
+Fresh live validation: Task 5 passed 25/25, including parallel agent retrieval
+from all three Knowledge Bases. All three scenario tests completed.
+See resubmission-task5-live.txt and resubmission-scenarios.txt.
 
-All three local scenarios completed. Deployed runtime math returned $134.96.
-X-Ray get_trace_graph confirmed NovaMart-Orchestrator, PolicyAgent,
-CommunicationAgent and all three KnowledgeBase nodes for policy trace:
-1-6ac279be-cf3e898f2512181c8e9af96a
-Runtime math trace: 1-6ac27ea2-240b546fe0ff207f824177fd
+AWS X-Ray get-trace-graph verified the new policy trace contains
+NovaMart-Orchestrator, PolicyAgent, CommunicationAgent and all three
+KnowledgeBase nodes. All reported service error and fault counts are zero.
+Policy trace: 1-6ac28612-c978304d9926c1affd22fe35
+See resubmission-xray-graph.txt for the actual AWS response.
 
-Screenshots remain outstanding. Capture genuine AWS console and terminal
-screenshots. Source code, populated .env and logs are included in the draft
-archive. No resources have been cleaned up.
+Active model configuration uses us.amazon.nova-pro-v1:0 for both roles.
+Earlier full-suite result: 120/120 (nova-full-tests-final.txt).
+
+AWS console screenshot supplied by the user is included unchanged at
+submission/screenshots/xray-service-map.png. It shows the connected
+Orchestrator, worker and Knowledge Base nodes. Labels are small and the
+warranty label is truncated; a closer console capture would improve readability.
+The API response supplies the full node names as supporting evidence.
+No resources have been cleaned up.

@@ -1,0 +1,11 @@
+# Model IDs are environment overrides read by config.py.
+AWS_REGION=us-east-1
+PROJECT_NAME=udacity-agentcore
+RETURNS_KB_ID=VKKS5Q6GIP
+SHIPPING_KB_ID=CBEKORPLSI
+WARRANTY_KB_ID=WZHJH6AI6W
+AGENTCORE_RUNTIME_ARN=arn:aws:bedrock-agentcore:us-east-1:327887916689:runtime/udacity_agentcore_runtime-hFEH18DWmq
+GUARDRAIL_ID=2nr0jppplwmi
+GUARDRAIL_VERSION=1
+ORCHESTRATOR_MODEL_ID=us.amazon.nova-pro-v1:0
+WORKER_MODEL_ID=us.amazon.nova-pro-v1:0

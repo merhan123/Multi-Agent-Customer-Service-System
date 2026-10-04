@@ -1,0 +1,77 @@
+
+───────────────────────────────────────────────────────
+  Task 5 - Bedrock Knowledge Bases
+───────────────────────────────────────────────────────
+  ✓ PASS [+5pts] RETURNS_KB_ID is set in environment (VKKS5Q6GIP)
+  ✓ PASS [+0pts] Returns Knowledge Base is ACTIVE
+  ✓ PASS [+0pts] Returns KB uses amazon.titan-embed-text-v2:0
+  ✓ PASS [+0pts] Returns KB data source has a completed sync
+  ✓ PASS [+5pts] SHIPPING_KB_ID is set in environment (CBEKORPLSI)
+  ✓ PASS [+0pts] Shipping Knowledge Base is ACTIVE
+  ✓ PASS [+0pts] Shipping KB uses amazon.titan-embed-text-v2:0
+  ✓ PASS [+0pts] Shipping KB data source has a completed sync
+  ✓ PASS [+5pts] WARRANTY_KB_ID is set in environment (WZHJH6AI6W)
+  ✓ PASS [+0pts] Warranty Knowledge Base is ACTIVE
+  ✓ PASS [+0pts] Warranty KB uses amazon.titan-embed-text-v2:0
+  ✓ PASS [+0pts] Warranty KB data source has a completed sync
+  ✓ PASS [+5pts] All three Knowledge Bases return passages for a policy question
+    [PARALLEL RETRIEVAL - START]  Spawning 3 sub-agents concurrently via ThreadPoolExecutor
+    ──────────────────────────────────────────────────────
+    +-- [SUB-AGENT 01]  ReturnsRetriever   KB-ID: VKKS5Q6GIP
+    +-- [SUB-AGENT 02]  ShippingRetriever  KB-ID: CBEKORPLSI
+    +-- [SUB-AGENT 03]  WarrantyRetriever  KB-ID: WZHJH6AI6W
+    Retrieving in parallel... (sub-agent output suppressed - clean results printed sequentially after [END])
+    ──────────────────────────────────────────────────────
+    [PARALLEL RETRIEVAL - END]  All 3 KBs responded  Elapsed: 12.8s
+
+    [SUB-AGENT 01]  ReturnsRetriever   KB: VKKS5Q6GIP
+      | The return window for premium customers is 60 days, and the warranty duration is 3 years for electronics. 
+      | Here are the relevant passages from the Returns Policy:
+      | - **Return Window for Premium Customers:**
+      |   "PREMIUM TIER Requirements: Spend $500+ in a calendar year OR place 20+ orders in a calendar year. Benefits: - Extended 60-day return window - Free expedited shipping on all orders - 3-year warranty on electronics - Priority customer support: response within 4 hours - Early access to sales and new product launches - Dedicated account manager for orders over $500" 
+      |   [Source](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/customer_tiers.txt)
+      | - **Warranty Duration:**
+      |   "PREMIUM TIER Requirements: Spend $500+ in a calendar year OR place 20+ orders in a calendar year. Benefits: - Extended 60-day return window - Free expedited shipping on all orders - 3-year warranty on electronics - Priority customer support: response within 4 hours - Early access to sales and new product launches - Dedicated account manager for orders over $500" 
+      |   [Source](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/returns/customer_tiers.txt)
+
+    [SUB-AGENT 02]  ShippingRetriever  KB: CBEKORPLSI
+      | The return window for premium customers is 60 days, and the warranty period is 3 years for electronics. 
+      | Source: [NovaMart Customer Tier Program](s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/shipping/customer_tiers.txt)
+
+    [SUB-AGENT 03]  WarrantyRetriever  KB: WZHJH6AI6W
+      | The return window for premium customers is 60 days, and the warranty duration is 3 years for electronics. Here are the relevant passages from the Warranty Policy:
+      | - **Return Window for Premium Customers:**
+      |   ```
+      |   NovaMart Customer Tier Program
+      |   ==============================
+      |   Last Updated: January 2025
+      |   TIER OVERVIEW
+      |   NovaMart offers two customer tiers: Standard and Premium.
+      |   PREMIUM TIER
+      |   Requirements: Spend $500+ in a calendar year OR place 20+ orders in a calendar year.
+      |   Benefits:
+      |   - Extended 60-day return window
+      |   - Free expedited shipping on all orders
+      |   - 3-year warranty on electronics
+      |   - Priority customer support: response within 4 hours
+      |   - Early access to sales and new product launches
+      |   - Dedicated account manager for orders over $500
+      |   Source: s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/warranty/customer_tiers.txt
+      |   ```
+      | - **Warranty Duration for Premium Customers:**
+      |   ```
+      |   NovaMart Warranty Policy
+      |   ==========================
+      |   Last Updated: January 2025
+      |   PREMIUM CUSTOMER WARRANTY
+      |   Premium tier customers receive an automatic 3-year warranty on all Electronics.
+      |   Source: s3://udacity-agentcore-policy-docs-327887916689-d4f11210/policies/warranty/warranty_policy.txt
+      |   ```
+  ✓ PASS [+5pts] search_all_policies() returned combined results from the three retrievers (12.8s)
+
+═══════════════════════════════════════════════════════
+  Score: 25/25 pts (100%)
+═══════════════════════════════════════════════════════
+
+  🎉 Perfect score! All tasks complete.
+

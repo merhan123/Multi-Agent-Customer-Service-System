@@ -1,0 +1,716 @@
+
+[1m[96m───────────────────────────────────────────────────────[0m
+[1m[96m  Task 5 - Bedrock Knowledge Bases[0m
+[1m[96m───────────────────────────────────────────────────────[0m
+  [92m✓ PASS[0m [+5pts] RETURNS_KB_ID is set in environment (VKKS5Q6GIP)
+  [91m✗ FAIL[0m [+0pts] Error verifying Returns KB: Could not connect to the endpoint URL: "https://bedrock-agent.us-east-1.amazonaws.com/knowledgebases/VKKS5Q6GIP"
+  [92m✓ PASS[0m [+5pts] SHIPPING_KB_ID is set in environment (CBEKORPLSI)
+  [91m✗ FAIL[0m [+0pts] Error verifying Shipping KB: Could not connect to the endpoint URL: "https://bedrock-agent.us-east-1.amazonaws.com/knowledgebases/CBEKORPLSI"
+  [92m✓ PASS[0m [+5pts] WARRANTY_KB_ID is set in environment (WZHJH6AI6W)
+  [91m✗ FAIL[0m [+0pts] Error verifying Warranty KB: Could not connect to the endpoint URL: "https://bedrock-agent.us-east-1.amazonaws.com/knowledgebases/WZHJH6AI6W"
+  [91m✗ FAIL[0m [+5pts] Some Knowledge Bases returned no passages
+         [93mReturns (Knowledge base retrieval failed: Could not connect to the endpoint URL: "https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/VKKS5Q6GIP/retrieve"); Shipping (Knowledge base retrieval failed: Could not connect to the endpoint URL: "https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/CBEKORPLSI/retrieve"); Warranty (Knowledge base retrieval failed: Could not connect to the endpoint URL: "https://bedrock-agent-runtime.us-east-1.amazonaws.com/knowledgebases/WZHJH6AI6W/retrieve")[0m
+    [PARALLEL RETRIEVAL - START]  Spawning 3 sub-agents concurrently via ThreadPoolExecutor
+    ──────────────────────────────────────────────────────
+    +-- [SUB-AGENT 01]  ReturnsRetriever   KB-ID: VKKS5Q6GIP
+    +-- [SUB-AGENT 02]  ShippingRetriever  KB-ID: CBEKORPLSI
+    +-- [SUB-AGENT 03]  WarrantyRetriever  KB-ID: WZHJH6AI6W
+    Retrieving in parallel... (sub-agent output suppressed - clean results printed sequentially after [END])
+2026-10-04 19:58:49,962 - agent_orchestrator - ERROR - Policy retriever failed: Warranty
+Traceback (most recent call last):
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/httpsession.py", line 509, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<8 lines>...
+        **extra_kwargs,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 485, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 494, in _make_request
+    raise new_e
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 470, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1125, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 827, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 246, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: AWSHTTPSConnection(host='bedrock-runtime.us-east-1.amazonaws.com', port=443): Failed to resolve 'bedrock-runtime.us-east-1.amazonaws.com' ([Errno 8] nodename nor servname provided, or not known)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/tests/../src/agent_orchestrator.py", line 515, in _run_retriever
+    return domain, str(agent(query))
+                       ~~~~~^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 881, in __call__
+    return run_async(
+        lambda: self._invoke_async_and_flush(
+    ...<8 lines>...
+        )
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 45, in run_async
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/opentelemetry/instrumentation/threading/__init__.py", line 162, in wrapped_func
+    return original_func(*func_args, **func_kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 38, in execute
+    return asyncio.run(execute_async())
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 33, in execute_async
+    return await async_func()
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 902, in _invoke_async_and_flush
+    return await self.invoke_async(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 984, in invoke_async
+    async for event in events:
+        _ = event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1398, in stream_async
+    async for event in events:
+    ...<8 lines>...
+            yield as_dict
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1542, in _run_loop
+    async for event in self._middleware_registry.invoke(
+    ...<11 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_middleware/registry.py", line 167, in invoke
+    async for event in gen:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1697, in terminal
+    async for event in events:
+    ...<17 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1752, in _execute_event_loop_cycle
+    async for event in events:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 302, in event_loop_cycle
+    async for model_event in model_events:
+        if not isinstance(model_event, ModelStopReason):
+            yield model_event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 691, in _handle_model_execution
+    raise e
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 609, in _handle_model_execution
+    async for event in agent._middleware_registry.invoke(
+    ...<5 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_middleware/registry.py", line 167, in invoke
+    async for event in gen:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 740, in terminal
+    async for event in stream_messages(
+    ...<12 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/streaming.py", line 572, in stream_messages
+    async for event in process_stream(chunks, start_time, cancel_signal):
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/streaming.py", line 460, in process_stream
+    async for chunk in chunks:
+    ...<36 lines>...
+            handle_redact_content(chunk["redactContent"], state)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/models/bedrock.py", line 1402, in stream
+    await task
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/opentelemetry/instrumentation/threading/__init__.py", line 162, in wrapped_func
+    return original_func(*func_args, **func_kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/models/bedrock.py", line 1452, in _stream
+    response = converse_method(**request)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/client.py", line 606, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/client.py", line 1076, in _make_api_call
+    http, parsed_response = self._make_request(
+                            ~~~~~~~~~~~~~~~~~~^
+        operation_model, request_dict, request_context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/client.py", line 1100, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 202, in _send_request
+    while self._needs_retry(
+          ~~~~~~~~~~~~~~~~~^
+        attempts,
+        ^^^^^^^^^
+    ...<3 lines>...
+        exception,
+        ^^^^^^^^^^
+    ):
+    ^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 362, in _needs_retry
+    responses = self._event_emitter.emit(
+        event_name,
+    ...<5 lines>...
+        request_dict=request_dict,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+       ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+        attempt_number, response, caught_exception
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+        attempt_number, response, caught_exception
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        attempt_number, caught_exception
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 281, in _do_get_response
+    http_response = self._send(request)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 385, in _send
+    return self.http_session.send(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/httpsession.py", line 539, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://bedrock-runtime.us-east-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse-stream"
+2026-10-04 19:58:52,721 - agent_orchestrator - ERROR - Policy retriever failed: Shipping
+Traceback (most recent call last):
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/httpsession.py", line 509, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<8 lines>...
+        **extra_kwargs,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 485, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 494, in _make_request
+    raise new_e
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 470, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1125, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 827, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 246, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: AWSHTTPSConnection(host='bedrock-runtime.us-east-1.amazonaws.com', port=443): Failed to resolve 'bedrock-runtime.us-east-1.amazonaws.com' ([Errno 8] nodename nor servname provided, or not known)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/tests/../src/agent_orchestrator.py", line 515, in _run_retriever
+    return domain, str(agent(query))
+                       ~~~~~^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 881, in __call__
+    return run_async(
+        lambda: self._invoke_async_and_flush(
+    ...<8 lines>...
+        )
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 45, in run_async
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/opentelemetry/instrumentation/threading/__init__.py", line 162, in wrapped_func
+    return original_func(*func_args, **func_kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 38, in execute
+    return asyncio.run(execute_async())
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 33, in execute_async
+    return await async_func()
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 902, in _invoke_async_and_flush
+    return await self.invoke_async(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 984, in invoke_async
+    async for event in events:
+        _ = event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1398, in stream_async
+    async for event in events:
+    ...<8 lines>...
+            yield as_dict
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1542, in _run_loop
+    async for event in self._middleware_registry.invoke(
+    ...<11 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_middleware/registry.py", line 167, in invoke
+    async for event in gen:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1697, in terminal
+    async for event in events:
+    ...<17 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1752, in _execute_event_loop_cycle
+    async for event in events:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 302, in event_loop_cycle
+    async for model_event in model_events:
+        if not isinstance(model_event, ModelStopReason):
+            yield model_event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 691, in _handle_model_execution
+    raise e
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 609, in _handle_model_execution
+    async for event in agent._middleware_registry.invoke(
+    ...<5 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_middleware/registry.py", line 167, in invoke
+    async for event in gen:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 740, in terminal
+    async for event in stream_messages(
+    ...<12 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/streaming.py", line 572, in stream_messages
+    async for event in process_stream(chunks, start_time, cancel_signal):
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/streaming.py", line 460, in process_stream
+    async for chunk in chunks:
+    ...<36 lines>...
+            handle_redact_content(chunk["redactContent"], state)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/models/bedrock.py", line 1402, in stream
+    await task
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/opentelemetry/instrumentation/threading/__init__.py", line 162, in wrapped_func
+    return original_func(*func_args, **func_kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/models/bedrock.py", line 1452, in _stream
+    response = converse_method(**request)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/client.py", line 606, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/client.py", line 1076, in _make_api_call
+    http, parsed_response = self._make_request(
+                            ~~~~~~~~~~~~~~~~~~^
+        operation_model, request_dict, request_context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/client.py", line 1100, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 202, in _send_request
+    while self._needs_retry(
+          ~~~~~~~~~~~~~~~~~^
+        attempts,
+        ^^^^^^^^^
+    ...<3 lines>...
+        exception,
+        ^^^^^^^^^^
+    ):
+    ^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 362, in _needs_retry
+    responses = self._event_emitter.emit(
+        event_name,
+    ...<5 lines>...
+        request_dict=request_dict,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+       ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+        attempt_number, response, caught_exception
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+        attempt_number, response, caught_exception
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        attempt_number, caught_exception
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 281, in _do_get_response
+    http_response = self._send(request)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 385, in _send
+    return self.http_session.send(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/httpsession.py", line 539, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://bedrock-runtime.us-east-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse-stream"
+2026-10-04 19:58:55,582 - agent_orchestrator - ERROR - Policy retriever failed: Returns
+Traceback (most recent call last):
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 239, in _new_conn
+    sock = connection.create_connection(
+        (self._dns_host, self.port),
+    ...<2 lines>...
+        socket_options=self.socket_options,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/util/connection.py", line 60, in create_connection
+    for res in socket.getaddrinfo(host, port, family, socket.SOCK_STREAM):
+               ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/socket.py", line 977, in getaddrinfo
+    for res in _socket.getaddrinfo(host, port, family, type, proto, flags):
+               ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+socket.gaierror: [Errno 8] nodename nor servname provided, or not known
+
+The above exception was the direct cause of the following exception:
+
+Traceback (most recent call last):
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/httpsession.py", line 509, in send
+    urllib_response = conn.urlopen(
+        method=request.method,
+    ...<8 lines>...
+        **extra_kwargs,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 847, in urlopen
+    retries = retries.increment(
+        method, url, error=new_e, _pool=self, _stacktrace=sys.exc_info()[2]
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/util/retry.py", line 485, in increment
+    raise reraise(type(error), error, _stacktrace)
+          ~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/util/util.py", line 39, in reraise
+    raise value
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 793, in urlopen
+    response = self._make_request(
+        conn,
+    ...<10 lines>...
+        **response_kw,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 494, in _make_request
+    raise new_e
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 470, in _make_request
+    self._validate_conn(conn)
+    ~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connectionpool.py", line 1125, in _validate_conn
+    conn.connect()
+    ~~~~~~~~~~~~^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 827, in connect
+    self.sock = sock = self._new_conn()
+                       ~~~~~~~~~~~~~~^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/urllib3/connection.py", line 246, in _new_conn
+    raise NameResolutionError(self.host, self, e) from e
+urllib3.exceptions.NameResolutionError: AWSHTTPSConnection(host='bedrock-runtime.us-east-1.amazonaws.com', port=443): Failed to resolve 'bedrock-runtime.us-east-1.amazonaws.com' ([Errno 8] nodename nor servname provided, or not known)
+
+During handling of the above exception, another exception occurred:
+
+Traceback (most recent call last):
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/tests/../src/agent_orchestrator.py", line 515, in _run_retriever
+    return domain, str(agent(query))
+                       ~~~~~^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 881, in __call__
+    return run_async(
+        lambda: self._invoke_async_and_flush(
+    ...<8 lines>...
+        )
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 45, in run_async
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 456, in result
+    return self.__get_result()
+           ~~~~~~~~~~~~~~~~~^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/_base.py", line 401, in __get_result
+    raise self._exception
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/opentelemetry/instrumentation/threading/__init__.py", line 162, in wrapped_func
+    return original_func(*func_args, **func_kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 38, in execute
+    return asyncio.run(execute_async())
+           ~~~~~~~~~~~^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 195, in run
+    return runner.run(main)
+           ~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/runners.py", line 118, in run
+    return self._loop.run_until_complete(task)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/base_events.py", line 725, in run_until_complete
+    return future.result()
+           ~~~~~~~~~~~~~^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_async.py", line 33, in execute_async
+    return await async_func()
+           ^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 902, in _invoke_async_and_flush
+    return await self.invoke_async(prompt, **kwargs)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 984, in invoke_async
+    async for event in events:
+        _ = event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1398, in stream_async
+    async for event in events:
+    ...<8 lines>...
+            yield as_dict
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1542, in _run_loop
+    async for event in self._middleware_registry.invoke(
+    ...<11 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_middleware/registry.py", line 167, in invoke
+    async for event in gen:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1697, in terminal
+    async for event in events:
+    ...<17 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/agent/agent.py", line 1752, in _execute_event_loop_cycle
+    async for event in events:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 302, in event_loop_cycle
+    async for model_event in model_events:
+        if not isinstance(model_event, ModelStopReason):
+            yield model_event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 691, in _handle_model_execution
+    raise e
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 609, in _handle_model_execution
+    async for event in agent._middleware_registry.invoke(
+    ...<5 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/_middleware/registry.py", line 167, in invoke
+    async for event in gen:
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/event_loop.py", line 740, in terminal
+    async for event in stream_messages(
+    ...<12 lines>...
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/streaming.py", line 572, in stream_messages
+    async for event in process_stream(chunks, start_time, cancel_signal):
+        yield event
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/event_loop/streaming.py", line 460, in process_stream
+    async for chunk in chunks:
+    ...<36 lines>...
+            handle_redact_content(chunk["redactContent"], state)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/models/bedrock.py", line 1402, in stream
+    await task
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/asyncio/threads.py", line 25, in to_thread
+    return await loop.run_in_executor(None, func_call)
+           ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Library/Frameworks/Python.framework/Versions/3.13/lib/python3.13/concurrent/futures/thread.py", line 59, in run
+    result = self.fn(*self.args, **self.kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/opentelemetry/instrumentation/threading/__init__.py", line 162, in wrapped_func
+    return original_func(*func_args, **func_kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/strands/models/bedrock.py", line 1452, in _stream
+    response = converse_method(**request)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/client.py", line 606, in _api_call
+    return self._make_api_call(operation_name, kwargs)
+           ~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/context.py", line 123, in wrapper
+    return func(*args, **kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/client.py", line 1076, in _make_api_call
+    http, parsed_response = self._make_request(
+                            ~~~~~~~~~~~~~~~~~~^
+        operation_model, request_dict, request_context
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/client.py", line 1100, in _make_request
+    return self._endpoint.make_request(operation_model, request_dict)
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 119, in make_request
+    return self._send_request(request_dict, operation_model)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 202, in _send_request
+    while self._needs_retry(
+          ~~~~~~~~~~~~~~~~~^
+        attempts,
+        ^^^^^^^^^
+    ...<3 lines>...
+        exception,
+        ^^^^^^^^^^
+    ):
+    ^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 362, in _needs_retry
+    responses = self._event_emitter.emit(
+        event_name,
+    ...<5 lines>...
+        request_dict=request_dict,
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/hooks.py", line 412, in emit
+    return self._emitter.emit(aliased_event_name, **kwargs)
+           ~~~~~~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/hooks.py", line 256, in emit
+    return self._emit(event_name, kwargs)
+           ~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/hooks.py", line 239, in _emit
+    response = handler(**kwargs)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 207, in __call__
+    if self._checker(**checker_kwargs):
+       ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 284, in __call__
+    should_retry = self._should_retry(
+        attempt_number, response, caught_exception
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 320, in _should_retry
+    return self._checker(attempt_number, response, caught_exception)
+           ~~~~~~~~~~~~~^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 363, in __call__
+    checker_response = checker(
+        attempt_number, response, caught_exception
+    )
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 247, in __call__
+    return self._check_caught_exception(
+           ~~~~~~~~~~~~~~~~~~~~~~~~~~~~^
+        attempt_number, caught_exception
+        ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+    )
+    ^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/retryhandler.py", line 416, in _check_caught_exception
+    raise caught_exception
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 281, in _do_get_response
+    http_response = self._send(request)
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/endpoint.py", line 385, in _send
+    return self.http_session.send(request)
+           ~~~~~~~~~~~~~~~~~~~~~~^^^^^^^^^
+  File "/Users/merhanadel/Desktop/Udacity/Multi-Agent-Customer-Service-System/.venv/lib/python3.13/site-packages/botocore/httpsession.py", line 539, in send
+    raise EndpointConnectionError(endpoint_url=request.url, error=e)
+botocore.exceptions.EndpointConnectionError: Could not connect to the endpoint URL: "https://bedrock-runtime.us-east-1.amazonaws.com/model/us.amazon.nova-pro-v1%3A0/converse-stream"
+    ──────────────────────────────────────────────────────
+    [PARALLEL RETRIEVAL - END]  All 3 KBs responded  Elapsed: 11.4s
+
+    [SUB-AGENT 01]  ReturnsRetriever   KB: VKKS5Q6GIP
+      | Policy retrieval failed for Returns: EndpointConnectionError
+
+    [SUB-AGENT 02]  ShippingRetriever  KB: CBEKORPLSI
+      | Policy retrieval failed for Shipping: EndpointConnectionError
+
+    [SUB-AGENT 03]  WarrantyRetriever  KB: WZHJH6AI6W
+      | Policy retrieval failed for Warranty: EndpointConnectionError
+  [91m✗ FAIL[0m [+5pts] search_all_policies() did not return combined results
+         [93mstatus=success text='[Returns]\nPolicy retrieval failed for Returns: EndpointConnectionError\n\n[Shipping]\nPolicy retrieval failed for Shipping: EndpointConnectionError\n\n[Warranty]\nPolicy retrieval failed for Warranty: Endpo'[0m
+
+═══════════════════════════════════════════════════════
+  [1mScore: [93m15/25 pts (60%)[0m
+═══════════════════════════════════════════════════════
+
+  [91mKeep going - re-read the TODO comments carefully.[0m
+
