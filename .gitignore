@@ -14,7 +14,7 @@ __pycache__/
 
 
 # ─────────────────────────────────────────────
-# Claude Code session data
+# Local development metadata
 # ─────────────────────────────────────────────
 .claude/
 
@@ -46,3 +46,6 @@ agentcore/.cli/
 
 # Project-local deployment tools
 .tools/
+
+# Generated development context
+agentcore/.llm-context/

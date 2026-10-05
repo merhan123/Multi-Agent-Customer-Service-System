@@ -17,7 +17,7 @@ See resubmission-xray-graph.txt for the actual AWS response.
 Active model configuration uses us.amazon.nova-pro-v1:0 for both roles.
 Earlier full-suite result: 120/120 (nova-full-tests-final.txt).
 
-AWS console screenshot supplied by the user is included unchanged at
+The original AWS console screenshot is included at
 submission/screenshots/xray-service-map.png. It shows the connected
 Orchestrator, worker and Knowledge Base nodes. Labels are small and the
 warranty label is truncated; a closer console capture would improve readability.
