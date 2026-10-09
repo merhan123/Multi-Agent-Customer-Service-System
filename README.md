@@ -599,7 +599,7 @@ The first deploy bootstraps CDK (`CDKToolkit` stack) - make sure your credential
 
 ## License
 
-[License](../../LICENSE.md)
+[License](LICENSE.md)
 
 
 ## Resubmission evidence
